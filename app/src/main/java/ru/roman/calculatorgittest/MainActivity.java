@@ -8,11 +8,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import ru.roman.calculatorgittest.utils.Calculation;
 
 public class MainActivity extends AppCompatActivity {
 
+    Calculation calculation;
+
     EditText input_number_1, input_number_2;
     Button show_result;
+    TextView text_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        calculation = new Calculation();
+
         input_number_1 = findViewById(R.id.num_1);
-        input_number_1 = findViewById(R.id.num_2);
+        input_number_2 = findViewById(R.id.num_2);
         show_result = findViewById(R.id.btn_result);
+        text_result = findViewById(R.id.text_result);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -34,8 +44,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
+
     }
 
 
+    public void onClick(View view) {
+
+
+        String num_first = input_number_1.getText().toString();
+        String num_second = input_number_2.getText().toString();
+
+        Toast.makeText(this, num_first, Toast.LENGTH_SHORT).show();
+        String summ_of_num = calculation.workCalculation(num_first,num_second);
+
+        text_result.setText(summ_of_num);
+    }
 }
