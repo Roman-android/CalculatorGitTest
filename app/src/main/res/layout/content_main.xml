@@ -64,4 +64,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_result" />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="ru.roman.calculatorgittest.fragments.OutputListFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_result"
+        tools:layout="@android:layout/list_content" />
 </android.support.constraint.ConstraintLayout>

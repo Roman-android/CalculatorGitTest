@@ -11,11 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import ru.roman.calculatorgittest.fragments.OutputListFragment;
 import ru.roman.calculatorgittest.utils.Calculation;
 
 public class MainActivity extends AppCompatActivity {
 
     Calculation calculation;
+    OutputListFragment outputListFragment;
 
     EditText input_number_1, input_number_2;
     Button show_result;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         calculation = new Calculation();
+        outputListFragment = new OutputListFragment();
 
         input_number_1 = findViewById(R.id.num_1);
         input_number_2 = findViewById(R.id.num_2);
@@ -58,5 +61,9 @@ public class MainActivity extends AppCompatActivity {
         String summ_of_num = calculation.workCalculation(num_first,num_second);
 
         text_result.setText(summ_of_num);
+
+        outputListFragment.results.add(summ_of_num);
+        outputListFragment.adapter.notifyDataSetChanged();
+
     }
 }
