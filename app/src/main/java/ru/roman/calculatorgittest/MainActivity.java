@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         show_result = findViewById(R.id.btn_result);
         text_result = findViewById(R.id.text_result);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
