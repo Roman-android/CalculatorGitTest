@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         results = new ArrayList<>();
         listView = findViewById(R.id.dynamic_list);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, results);
-        results.add("456");
         listView.setAdapter(adapter);
 
         input_number_1 = findViewById(R.id.num_1);
@@ -76,5 +75,8 @@ public class MainActivity extends AppCompatActivity {
         //outputListFragment.updateList(sum_of_num);
         results.add(sum_of_num);
         adapter.notifyDataSetChanged();
+
+        input_number_1.setText("");
+        input_number_2.setText("");
     }
 }
